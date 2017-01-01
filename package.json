@@ -1,0 +1,21 @@
+{
+  "name": "express-restfunc",
+  "version": "1.0.0",
+  "description": "An Restfunc implementation to Express.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "restfunc",
+    "express",
+    "rest",
+    "api"
+  ],
+  "author": "garusis",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "lodash": "^4.17.4"
+  }
+}
