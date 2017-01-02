@@ -1,0 +1,125 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/garusis/.nvm/versions/node/v4.6.2/bin/node',
+1 verbose cli   '/home/garusis/.nvm/versions/node/v4.6.2/bin/npm',
+1 verbose cli   'publish',
+1 verbose cli   '--force' ]
+2 info using npm@4.0.2
+3 info using node@v4.6.2
+4 warn using --force I sure hope you know what you are doing.
+5 verbose publish [ '.' ]
+6 silly cache add args [ '.', null ]
+7 verbose cache add spec .
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: '.',
+8 silly cache add   scope: null,
+8 silly cache add   escapedName: null,
+8 silly cache add   name: null,
+8 silly cache add   rawSpec: '.',
+8 silly cache add   spec: '/home/garusis/Documents/Development/express-restfunc',
+8 silly cache add   type: 'directory' }
+9 verbose addLocalDirectory /home/garusis/.npm/express-restfunc/1.1.3/package.tgz not in flight; packing
+10 verbose correctMkdir /home/garusis/.npm correctMkdir not in flight; initializing
+11 info lifecycle express-restfunc@1.1.3~prepublish: express-restfunc@1.1.3
+12 silly lifecycle express-restfunc@1.1.3~prepublish: no script for prepublish, continuing
+13 info lifecycle express-restfunc@1.1.3~prepare: express-restfunc@1.1.3
+14 silly lifecycle express-restfunc@1.1.3~prepare: no script for prepare, continuing
+15 verbose tar pack [ '/home/garusis/.npm/express-restfunc/1.1.3/package.tgz',
+15 verbose tar pack   '/home/garusis/Documents/Development/express-restfunc' ]
+16 verbose tarball /home/garusis/.npm/express-restfunc/1.1.3/package.tgz
+17 verbose folder /home/garusis/Documents/Development/express-restfunc
+18 verbose addLocalTarball adding from inside cache /home/garusis/.npm/express-restfunc/1.1.3/package.tgz
+19 verbose correctMkdir /home/garusis/.npm correctMkdir not in flight; initializing
+20 silly cache afterAdd express-restfunc@1.1.3
+21 verbose afterAdd /home/garusis/.npm/express-restfunc/1.1.3/package/package.json not in flight; writing
+22 verbose correctMkdir /home/garusis/.npm correctMkdir not in flight; initializing
+23 verbose afterAdd /home/garusis/.npm/express-restfunc/1.1.3/package/package.json written
+24 silly publish { name: 'express-restfunc',
+24 silly publish   version: '1.1.3',
+24 silly publish   description: 'A Restfunc implementation for Express.js',
+24 silly publish   main: 'lib/index.js',
+24 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+24 silly publish   repository:
+24 silly publish    { type: 'git',
+24 silly publish      url: 'git+ssh://git@github.com/garusis/express-restfunc.git' },
+24 silly publish   contributors:
+24 silly publish    [ { name: 'Marcos J. Alvarez',
+24 silly publish        email: 'garusis@gmail.com',
+24 silly publish        url: 'https://github.com/garusis' } ],
+24 silly publish   keywords: [ 'restfunc', 'express', 'rest', 'api' ],
+24 silly publish   bugs: { url: 'https://github.com/garusis/express-restfunc/issues' },
+24 silly publish   author:
+24 silly publish    { name: 'Marcos J. Alvarez',
+24 silly publish      email: 'garusis@gmail.com',
+24 silly publish      url: 'https://github.com/garusis' },
+24 silly publish   license: 'MIT',
+24 silly publish   dependencies: { express: '^4.14.0', lodash: '^4.17.4' },
+24 silly publish   files: [ 'README.md', '/lib' ],
+24 silly publish   engines: { node: '>=4.0.0' },
+24 silly publish   readme: '#express-restfunc\nA RESTfunc implementation for ExpressJS\n\n**RESTfunc** is an approach for REST APIs proposed by [screenfun](https://github.com/screenfun) that allows to make shorter, cleaner and more understandable requests ([Read more](https://goo.gl/ql209D)). \n\n**express-restfunc** is an implementation of this approach for ExpressJS. Includes basic functions and allows you to attach your own functions.\n\n##Installation\n```\nnpm i --save express-restfunc\n```\n\n##Usage\n\n###Simple Usage (Enable basic RESTfunc functions on all of request)\n```\nconst express = require(\'express\');\nconst restfunc = require(\'express-restfunc\');\n\nconst app = express();\n\napp.use(restfunc());\n\n/*\n* Now you can make request like /my-test-endpoint?attr1=round(parse(12.4)))&attr2=laalala\n* and you get on req.query somewhat like {"attr1":12,"attr2":"laalala"}\n*/\n```\n\n###Enable your own functions on all of request\n```\nconst express = require(\'express\');\nconst restfunc = require(\'express-restfunc\');\n\nconst app = express();\n\nrestfunc.attach(\'foo\', function (arg) {\n    return \'foo-\' + arg;\n});\n\n\napp.use(restfunc());\n\n/*\n* Now you can make request like /my-test-endpoint?attr1=foo(round(parse(12.4))))&attr2=laalala\n* and you get on req.query somewhat like {"attr1":"foo-12","attr2":"laalala"}\n*/\n```\n\n###Enable your own scopes on all of request\nIf you want to make your request more readable and modular you could use scopes. \n\n```\nconst express = require(\'express\');\nconst restfunc = require(\'express-restfunc\');\n\nconst app = express();\n\nrestfunc.attach(\'math\', {\n    pow: function (base, exponent) {\n        return Math.pow(base, exponent);\n    }\n});\n\n\napp.use(restfunc());\n\n/*\n* Now you can make request like /my-test-endpoint?attr1=math.pow(2,8)&attr2=laalala\n* and you get on req.query somewhat like {"attr1":256,"attr2":"laalala"}\n*/\n```\n\n\n\n',
+24 silly publish   readmeFilename: 'README.md',
+24 silly publish   gitHead: '5102a4e5026ead1ac16601e95206978c3d560ae6',
+24 silly publish   homepage: 'https://github.com/garusis/express-restfunc#readme',
+24 silly publish   _id: 'express-restfunc@1.1.3',
+24 silly publish   _shasum: 'bdce961ffbbf9d61d9955187cca22aef79b1f866',
+24 silly publish   _from: '.' }
+25 info lifecycle express-restfunc@1.1.3~prepublishOnly: express-restfunc@1.1.3
+26 silly lifecycle express-restfunc@1.1.3~prepublishOnly: no script for prepublishOnly, continuing
+27 verbose getPublishConfig undefined
+28 silly mapToRegistry name express-restfunc
+29 silly mapToRegistry using default registry
+30 silly mapToRegistry registry https://registry.npmjs.org/
+31 silly mapToRegistry data Result {
+31 silly mapToRegistry   raw: 'express-restfunc',
+31 silly mapToRegistry   scope: null,
+31 silly mapToRegistry   escapedName: 'express-restfunc',
+31 silly mapToRegistry   name: 'express-restfunc',
+31 silly mapToRegistry   rawSpec: '',
+31 silly mapToRegistry   spec: 'latest',
+31 silly mapToRegistry   type: 'tag' }
+32 silly mapToRegistry uri https://registry.npmjs.org/express-restfunc
+33 verbose publish registryBase https://registry.npmjs.org/
+34 silly publish uploading /home/garusis/.npm/express-restfunc/1.1.3/package.tgz
+35 verbose request uri https://registry.npmjs.org/express-restfunc
+36 verbose request sending authorization for write operation
+37 info attempt registry request try #1 at 10:20:58 PM
+38 verbose request using bearer token for auth
+39 verbose request id a4f3dc7c6b66dc74
+40 http request PUT https://registry.npmjs.org/express-restfunc
+41 http 403 https://registry.npmjs.org/express-restfunc
+42 verbose headers { 'content-type': 'application/json',
+42 verbose headers   'cache-control': 'max-age=300',
+42 verbose headers   'content-length': '95',
+42 verbose headers   'accept-ranges': 'bytes',
+42 verbose headers   date: 'Mon, 02 Jan 2017 03:20:59 GMT',
+42 verbose headers   via: '1.1 varnish',
+42 verbose headers   connection: 'keep-alive',
+42 verbose headers   'x-served-by': 'cache-atl6224-ATL',
+42 verbose headers   'x-cache': 'MISS',
+42 verbose headers   'x-cache-hits': '0',
+42 verbose headers   'x-timer': 'S1483327258.524985,VS0,VE774',
+42 verbose headers   vary: 'Accept-Encoding' }
+43 verbose request invalidating /home/garusis/.npm/registry.npmjs.org/express-restfunc on PUT
+44 error publish Failed PUT 403
+45 verbose stack Error: "You cannot publish over the previously published version 1.1.3." : express-restfunc
+45 verbose stack     at makeError (/home/garusis/.nvm/versions/node/v4.6.2/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+45 verbose stack     at CachingRegistryClient.<anonymous> (/home/garusis/.nvm/versions/node/v4.6.2/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+45 verbose stack     at Request._callback (/home/garusis/.nvm/versions/node/v4.6.2/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+45 verbose stack     at Request.self.callback (/home/garusis/.nvm/versions/node/v4.6.2/lib/node_modules/npm/node_modules/request/request.js:186:22)
+45 verbose stack     at emitTwo (events.js:87:13)
+45 verbose stack     at Request.emit (events.js:172:7)
+45 verbose stack     at Request.<anonymous> (/home/garusis/.nvm/versions/node/v4.6.2/lib/node_modules/npm/node_modules/request/request.js:1081:10)
+45 verbose stack     at emitOne (events.js:77:13)
+45 verbose stack     at Request.emit (events.js:169:7)
+45 verbose stack     at IncomingMessage.<anonymous> (/home/garusis/.nvm/versions/node/v4.6.2/lib/node_modules/npm/node_modules/request/request.js:1001:12)
+46 verbose statusCode 403
+47 verbose pkgid express-restfunc
+48 verbose cwd /home/garusis/Documents/Development/express-restfunc
+49 error Linux 4.8.6-300.fc25.x86_64
+50 error argv "/home/garusis/.nvm/versions/node/v4.6.2/bin/node" "/home/garusis/.nvm/versions/node/v4.6.2/bin/npm" "publish" "--force"
+51 error node v4.6.2
+52 error npm  v4.0.2
+53 error code E403
+54 error "You cannot publish over the previously published version 1.1.3." : express-restfunc
+55 error If you need help, you may report this error at:
+55 error     <https://github.com/npm/npm/issues>
+56 verbose exit [ 1, true ]

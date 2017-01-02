@@ -1,6 +1,6 @@
 {
   "name": "express-restfunc",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "A Restfunc implementation for Express.js",
   "main": "lib/index.js",
   "scripts": {
