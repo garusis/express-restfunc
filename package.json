@@ -1,21 +1,42 @@
 {
   "name": "express-restfunc",
   "version": "1.0.0",
-  "description": "An Restfunc implementation to Express.js",
-  "main": "index.js",
+  "description": "A Restfunc implementation for Express.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:garusis/express-restfunc.git"
+  },
+  "contributors": [
+    {
+      "name": "Marcos J. Alvarez",
+      "email": "garusis@gmail.com",
+      "web": "https://github.com/garusis"
+    }
+  ],
   "keywords": [
     "restfunc",
     "express",
     "rest",
     "api"
   ],
-  "author": "garusis",
+  "bugs": {
+    "url": "https://github.com/garusis/express-restfunc/issues"
+  },
+  "author": "Marcos J. Alvarez <garusis@gmail.com> (https://github.com/garusis)",
   "license": "MIT",
   "dependencies": {
     "express": "^4.14.0",
     "lodash": "^4.17.4"
+  },
+  "files":[
+    "README.md",
+    "/lib"
+  ],
+  "engines": {
+    "node": ">=4.0.0"
   }
 }
